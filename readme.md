@@ -2,7 +2,7 @@
 
 A command-line interface tool for simulating a file system in JavaScript with features like file creation, editing, and directory management.
 
-![CLI Demo](../images/image.png)
+![CLI Demo](./images/image.png)
 
 ## 🚀 Features
 
