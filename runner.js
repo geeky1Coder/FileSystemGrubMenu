@@ -197,6 +197,22 @@ async function chooseFile(dir) {
   return fileName;
 }
 
+// Add this function before handleMenu() call
+async function handleAddFolder() {
+  const { dir, path } = await chooseDirectory();
+  const { folderName } = await inquirer.prompt({
+    type: 'input',
+    name: 'folderName',
+    message: 'Enter the folder name:',
+    validate: input => {
+      if (!input.trim()) return 'Folder name cannot be empty';
+      if (input.includes('/')) return 'Folder name cannot contain "/"';
+      return true;
+    }
+  });
+  fileSystem.createFolder(path, folderName.trim());
+}
+
 async function handleMenu() {
   const { action } = await inquirer.prompt({
     type: 'list',
