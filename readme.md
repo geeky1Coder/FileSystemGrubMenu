@@ -24,7 +24,7 @@ npm install
 Start the CLI:
 
 ```bash
-npm start
+node index.js
 ```
 
 ### Available Commands:
